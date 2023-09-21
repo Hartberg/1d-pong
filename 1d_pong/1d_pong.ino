@@ -5,3 +5,4 @@ const int ledPin = 8;
 void setup() {}
 
 void loop() {}
+int dog = 2;
