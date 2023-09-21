@@ -44,8 +44,8 @@ void main_game()
         {
             prev_case = millis();
             strip.clear();
-            strip.setPixelColor(index, green, red, blue);
             index++;
+            strip.setPixelColor(index, green, red, blue);
             strip.show();
 
             if (index == 32 && button_state1 == HIGH)
@@ -55,6 +55,7 @@ void main_game()
                 strip.clear();
                 update_color();
                 Serial.print("1");
+                break;
             }
             else if (index == 32) // om man ikke klarer det
             {
@@ -85,6 +86,7 @@ void main_game()
                 mode = 1;
                 strip.setPixelColor(0, 0, 0, 0);
                 update_color();
+                break;
             }
             else if (index == 0) // mekka ikke.
             {
@@ -105,14 +107,7 @@ void main_game()
 void button_update()
 { // opdaterer knappene t
     button_state1 = digitalRead(pin_button1);
-    if (button_state1 == HIGH)
-    {
-    }
-
     button_state2 = digitalRead(pin_button2);
-    if (button_state2 == HIGH)
-    {
-    }
 }
 // hvis knapp nede og tid siden sist nede er mer enn.
 // la knapp være på en tid
